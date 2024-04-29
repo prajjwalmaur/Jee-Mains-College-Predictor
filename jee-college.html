@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jee Main College Predictor</title>
+    <link rel="stylesheet" href="./jee-rank/style.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="description" content="By inputting their JEE Main scores, category, and other relevant information, students can receive a list of colleges that match their performance and preferences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./jee-rank/abhishek.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <img src="./sudo-day-logo.png" alt="LOGO" srcset="" id="logo">
+        <nav class="navbar">
+            <ul id="nav">
+                <li class="items"><a href="/">Home</a></li>
+                <li class="items"><a href="/contact-us/">Contact Us</a></li>
+                <li class="items"><a href="/disclaimer/">Desclaimer</a></li>
+                <li class="items"><a href="/privacy-and-policy/">Privacy And Policy</a></li>
+            </ul>
+        </nav>
+        <button id="slidebar" onclick="slidebar();">
+            &equiv;
+        </button>
+        <button id="reload" onclick="reload();">
+            X
+        </button>
+    </header>
+    <h1 id="mainheading">JEE Main College Predictor || College List According to JEE Rank</h1>
+    <main class="container">
+        <div class="smallcont">
+            <label for="category">Category : </label>
+            <select id="category" name="Category">
+                <option value="open" selected>OPEN</option>
+                <option value="ews">EWS</option>
+                <option value="obc-ncl">OBC NCL</option>
+                <option value="sc">SC</option>
+                <option value="open-pwd">OPEN (PwD)</option>
+                <option value="ews-pwd">EWS (PwD)</option>
+                <option value="obc-ncl-pwd">OBC (PwD)</option>
+                <option value="sc-pwd">SC (PwD)</option>
+                <option value="st-pwd">ST (PwD)</option>
+            </select>
+        </div>
+        <div class="smallcont">
+            <label for="rank">Category Rank : </label>
+            <input type="number" id="rank" placeholder="Enter your Category Rank" value="1">
+        </div>
+        <div class="smallcont">
+            <label for="gender">Gender : </label>
+            <select id="gender" name="Gender">
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="smallcont">
+            <label for="program">Branch : </label>
+            <select id="program" name="Program">
+                <option value="all" selected>ALL</option>
+                <option value="Aerospace">Aerospace</option>
+                <option value="Agricultural">Agricultural</option>
+                <option value="Bio">Bio</option>
+                <option value="Ceramic">Ceramic</option>
+                <option value="Chemical">Chemical</option>
+                <option value="Civil">Civil</option>
+                <option value="Comput">Computer</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Physics">Physics</option>
+                <option value="Mechatronics">Mechatronics</option>
+                <option value="Materials">Materials</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Metallurg">Metallurgy</option>
+                <option value="Mining">Mining</option>
+                <option value="Production">Production</option>
+                <option value="Textile">Textile</option>
+                <option value="Food">Food</option>
+                <option value="Math">Math</option>
+                <option value="Chemistry">Chemistry</option>
+            </select>
+        </div>
+        <div class="smallcont">
+            <label for="state">Home State : </label>
+            <select id="state" name="state">
+                <option value="ar">Arunachal Pradesh</option>
+                <option value="ap">Andhra Pradesh</option>
+                <option value="as">Assam</option>
+                <option value="bh">Bihar</option>
+                <option value="ch">Chhattisgarh</option>
+                <option value="go">Goa</option>
+                <option value="gt">Gujarat</option>
+                <option value="hr">Haryana</option>
+                <option value="hp">Himachal Pradesh</option>
+                <option value="jh">Jharkhand</option>
+                <option value="ka">Karnataka</option>
+                <option value="kl">Kerala</option>
+                <option value="mp">Madhya Pradesh</option>
+                <option value="mh" selected>Maharashtra</option>
+                <option value="mn">Manipur</option>
+                <option value="mg">Meghalaya</option>
+                <option value="mz">Mizoram</option>
+                <option value="nl">Nagaland</option>
+                <option value="od">Odisha</option>
+                <option value="pd">Puducherry</option>
+                <option value="pb">Punjab</option>
+                <option value="rj">Rajasthan</option>
+                <option value="sk">Sikkim</option>
+                <option value="tn">Tamil Nadu</option>
+                <option value="tl">Telangana</option>
+                <option value="tr">Tripura</option>
+                <option value="uk">Uttarakhand</option>
+                <option value="up" >Uttar Pradesh</option>
+                <option value="wb">West Bengal</option>
+            </select>
+        </div>
+        <button id="submit" onclick="submit();">Submit</button>
+    </main>
+    <din id="pleasewait">
+        Please Wait <div id="pleasetime"></div>
+    </din>
+    <div class="result">
+    </div>
+    <div class="description">
+<h2>Introduction : </h2>
+        <p>The Joint Entrance Examination (JEE) Main is one of the most highly anticipated exams for students in India
+            aspiring to pursue a career in engineering. With numerous colleges and courses available, making an informed
+            decision about which college to attend can be overwhelming. This is where the JEE Main College Predictor
+            tool comes to the rescue. This innovative tool, available on platforms like sudoday.com, assists students in
+            predicting their potential colleges based on their JEE Main scores. In this article, we'll delve into how
+            the JEE Main College Predictor works and how students can benefit from it.
+        </p>
+        <h2>Understanding the JEE Main College Predictor Tool</h2>
+        <p>
+            The JEE Main College Predictor is a valuable online tool designed to help students estimate the colleges
+            where they might secure admission based on their JEE Main scores. This tool uses a sophisticated algorithm
+            that takes into account various factors, including the student's JEE Main rank, previous year's cut-off
+            trends, and the specific college's admission criteria. By inputting their expected JEE Main score, students
+            can receive a list of colleges that align with their performance and preferences.
+        </p>
+        <h2>Key Features of the JEE Main College Predictor</h2>
+        <p>
+            <b>Accuracy:</b> The tool's accuracy is its highlight. By analyzing historical data and trends, it provides
+            a
+            fairly accurate prediction of the colleges where a student could secure admission.
+        </p>
+        <p>
+            <b>Time-Saving:</b> Instead of manually researching and comparing colleges, the JEE Main College Predictor
+            streamlines the process by instantly generating a list of potential colleges based on the student's input.
+        </p>
+        <p>
+            <b>Personalized Results:</b> The tool takes into account a student's preferences, such as preferred
+            location,
+            branch of engineering, and type of college (government-funded, private, etc.), to provide tailored results.
+        </p>
+        <p>
+            <b>Rank Estimation:</b> In addition to predicting colleges, some versions of the tool also estimate the
+            student's
+            potential rank based on the inputted score.
+        </p>
+        <h2> How to Use the JEE Main College Predictor</h2>
+        <p>
+            <b>Access the Tool:</b> Visit platforms that host the JEE Main College Predictor tool, such as sudoday.com.
+        </p>
+        <p>
+            <b> Input Information:</b> Provide the required information, including your expected JEE Main score,
+            category, and preferences regarding location and branch of engineering.
+        </p>
+        <p>
+            <b>Generate Results:</b> Click on the "Predict" or "Generate Results" button to receive a list of colleges
+            that
+            match your input.
+        </p>
+        <p>
+            <b>Review and Compare:</b> Analyze the list of colleges and their details. Consider the previous year's
+            cut-off
+            ranks, placements, infrastructure, and other factors that matter to you.
+        </p>
+        <p>
+            <b>Shortlist Colleges:</b> Based on the results, create a shortlist of colleges that align with your
+            aspirations
+            and circumstances.
+        </p>
+        <p>
+            <b>Further Research:</b> While the tool offers a great starting point, it's essential to conduct additional
+            research about the shortlisted colleges to make an informed decision.
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            The JEE Main College Predictor tool serves as a guiding light for aspiring engineering students. It
+            eliminates much of the guesswork and stress associated with choosing a college by offering data-driven
+            predictions. However, students should remember that the tool provides estimates based on historical data and
+            trends. Actual results may vary due to changing admission criteria and other factors. Therefore, while the
+            tool is a valuable resource, it's essential to use it alongside other research methods to make a
+            well-informed decision about their academic and professional journey.</p>
+        <h2>Steps : </h2>
+        <p>1. Select Your Category / Caste.</p>
+        <p>2. Enter Your Jee Mains Rank.</p>
+        <p>3. Select Your Gender</p>
+        <p>4. Select Branch otherwise it will show DATA of all Branch.</p>
+        <p>5. Select Your Home state.</p>
+        <p>6. Then Click on Submit Button.</p>
+    </div>
+    <footer id="foot">
+        <p>&copy; 2023 Sudoday. All rights reserved.</p>
+    </footer>
+    <script src="./jee-rank/script.js"></script>
+</body>
+
+</html>
